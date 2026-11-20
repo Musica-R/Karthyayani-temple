@@ -1,0 +1,16 @@
+.prayer { text-align: center; padding-top: 3rem; }
+.mantra-big { font-size: 1.9rem; font-weight: 700; color: var(--acc); }
+.prayer-sub { color: var(--muted); font-style: italic; }
+.deity-photo { max-width: 760px; margin: 2rem auto; padding: 10px; border: 2px solid var(--gold); border-radius: 6px; outline: 1px solid var(--cardline); outline-offset: 6px; background: var(--maroon); }
+.deity-photo img { width: 100%; max-height: 460px; object-fit: cover; filter: sepia(.25) contrast(1.05); }
+@media (max-width: 768px) { .mantra-big { font-size: 1.5rem; } }
+@media (max-width: 420px) { .mantra-big { font-size: 1.2rem; } .deity-photo { padding: 6px; outline-offset: 4px; } }
+@media (max-width: 320px) { .mantra-big { font-size: 1.05rem; } }
+
+.prayer-band { text-align: center; padding-top: 1rem; }
+.how-list { max-width: 640px; }
+.how-list li { display: flex; gap: .7rem; align-items: flex-start; padding: .8rem 1rem; margin-bottom: .7rem; border: 1px solid var(--cardline); border-radius: 10px; background: var(--card); color: var(--muted); }
+.how-list svg { color: var(--acc); flex: none; margin-top: .4rem; }
+
+/* layout polish */
+.how-list li { transition: transform .3s; } .how-list li:hover { transform: translateX(6px); }

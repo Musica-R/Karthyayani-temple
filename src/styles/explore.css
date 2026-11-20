@@ -1,0 +1,53 @@
+/* Explore the Temple: left content, right carousel (prefix xp-) */
+.xp-head { max-width: 760px; margin: 0 auto 2.4rem; text-align: center; }
+.xp-sub { text-align: center; }
+.xp-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 3rem; align-items: center; }
+
+.xp-tabs { display: flex; flex-direction: column; gap: .55rem; }
+.xp-tabs li { border: 1px solid var(--cardline); border-radius: 14px; background: rgba(255, 255, 255, .04); overflow: hidden; transition: background .3s, border-color .3s; }
+.xp-tabs li.on { background: linear-gradient(135deg, rgba(168, 20, 26, .55), rgba(74, 16, 16, .75)); border-color: var(--gold); }
+.xp-tabs button { width: 100%; display: flex; align-items: center; gap: .9rem; padding: .8rem 1.1rem; background: none; border: 0; color: var(--cream); text-align: left; }
+.xp-num { font-family: var(--display); font-size: .9rem; color: var(--gold); opacity: .8; min-width: 1.6rem; }
+.xp-ico { font-size: 1.25rem; color: var(--saffron); flex: none; }
+.xp-name { font-size: 1.15rem; font-weight: 700; }
+.xp-tabs li:not(.on) button:hover .xp-name { color: var(--gold); }
+.xp-body { padding: 0 1.2rem 1.1rem 3.9rem; animation: xpIn .5s ease; }
+.xp-body p { color: var(--muted); line-height: 1.6; font-size: 1.02rem; margin-bottom: .7rem; }
+.xp-more { display: inline-flex; align-items: center; gap: .5rem; padding: .4rem 1.1rem; border-radius: 30px; background: var(--saffron); color: #fff; font-weight: 700; font-size: .98rem; transition: transform .25s, background .25s; }
+.xp-more:hover { transform: translateX(4px); background: var(--kumkum); }
+.xp-bar { display: block; height: 3px; margin-top: .9rem; border-radius: 3px; background: rgba(255, 255, 255, .12); overflow: hidden; }
+.xp-bar i { display: block; height: 100%; width: 100%; background: var(--saffron); transform-origin: left; animation: xpBar 5.5s linear forwards; }
+@keyframes xpBar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes xpIn { from { opacity: 0; transform: translateY(-6px); } }
+
+.xp-frame { position: relative; padding: 0 14px 14px 0; }
+.xp-frame::before { content: ''; position: absolute; inset: 14px 0 0 14px; border: 2px solid var(--saffron); border-radius: 26px; z-index: 0; }
+.xp-stage { position: relative; z-index: 1; aspect-ratio: 4 / 4.4; border-radius: 24px; overflow: hidden; border: 3px solid var(--gold); background: var(--maroon); box-shadow: 0 22px 44px rgba(0, 0, 0, .45); }
+.xp-slide { position: absolute; inset: 0; margin: 0; opacity: 0; transform: scale(1.07); transition: opacity .9s ease, transform 6s ease; }
+.xp-slide.on { opacity: 1; transform: scale(1); }
+.xp-slide img { width: 100%; height: 100%; object-fit: cover; }
+.xp-shade { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(20, 4, 4, .85)); pointer-events: none; }
+.xp-cap { position: absolute; left: 1.3rem; bottom: 1.1rem; right: 5.5rem; display: flex; align-items: baseline; gap: .9rem; color: #fff; }
+.xp-cap b { font-family: var(--display); font-size: 2rem; color: var(--gold); line-height: 1; }
+.xp-cap small { font-size: .9rem; color: var(--muted); font-weight: 400; }
+.xp-cap span { font-size: 1.3rem; font-weight: 700; line-height: 1.2; }
+.xp-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: rgba(255, 255, 255, .92); color: var(--kumkum); border: 0; box-shadow: 0 4px 14px rgba(0, 0, 0, .3); transition: background .25s, color .25s; }
+.xp-arrow:hover { background: var(--saffron); color: #fff; }
+.xp-arrow.l { left: 12px; } .xp-arrow.r { right: 12px; }
+.xp-dots { position: absolute; z-index: 2; right: 30px; bottom: 26px; display: flex; gap: 6px; }
+.xp-dots button { width: 9px; height: 9px; padding: 0; border-radius: 50%; border: 0; background: rgba(255, 255, 255, .5); transition: width .3s, background .3s; }
+.xp-dots button.on { width: 24px; border-radius: 6px; background: var(--saffron); }
+
+@media (max-width: 1024px) { .xp-grid { gap: 2rem; } }
+@media (max-width: 860px) {
+  .xp-grid { grid-template-columns: 1fr; }
+  .xp-right { order: -1; max-width: 520px; width: 100%; margin-inline: auto; }
+  .xp-stage { aspect-ratio: 4 / 3.4; }
+}
+@media (max-width: 420px) {
+  .xp-body { padding-left: 1.2rem; }
+  .xp-name { font-size: 1.05rem; }
+  .xp-cap span { font-size: 1.05rem; } .xp-cap b { font-size: 1.5rem; }
+  .xp-arrow { width: 36px; height: 36px; }
+  .xp-frame { padding: 0 8px 8px 0; } .xp-frame::before { inset: 8px 0 0 8px; }
+}

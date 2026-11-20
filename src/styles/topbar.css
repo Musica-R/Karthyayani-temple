@@ -1,0 +1,110 @@
+/* Pooja-time carousel above the navbar (prefix tb-) */
+:root {
+    --tb-h: 38px;
+}
+
+.tb {
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: var(--tb-h);
+    z-index: 55;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .6rem;
+    padding: 0 3%;
+    background: linear-gradient(90deg, #4a1010, #a8141a 50%, #4a1010);
+    color: #fff3df;
+    border-bottom: 1px solid var(--gold);
+}
+
+.tb-track {
+    position: relative;
+    flex: 0 1 640px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.tb-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .55rem;
+    margin: 0;
+    font-size: .98rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform .5s ease, opacity .5s ease;
+}
+
+.tb-slide.on {
+    opacity: 1;
+    transform: none;
+}
+
+.tb-slide.out {
+    transform: translateY(-100%);
+}
+
+.tb-slide svg {
+    color: var(--gold);
+    flex: none;
+}
+
+.tb-slide span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tb-arrow {
+    background: none;
+    border: 0;
+    color: var(--gold);
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-size: .8rem;
+    flex: none;
+    transition: background .25s, color .25s;
+}
+
+.tb-arrow:hover {
+    background: var(--gold);
+    color: #4a1010;
+}
+
+/* push the navbar below the bar (selector is stronger than layout.css) */
+body .nav {
+    top: var(--tb-h);
+}
+
+@media (max-width: 480px) {
+    :root {
+        --tb-h: 34px;
+    }
+
+    .tb-slide {
+        font-size: .85rem;
+    }
+
+    .tb-arrow {
+        width: 24px;
+        height: 24px;
+    }
+
+    .tb {
+        padding: 0 2%;
+    }
+}
+
+@media (max-width: 340px) {
+    .tb-slide {
+        font-size: .78rem;
+    }
+}

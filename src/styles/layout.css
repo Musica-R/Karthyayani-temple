@@ -1,0 +1,39 @@
+/* ---------- navbar: white background, orange text ---------- */
+.nav { position: fixed; inset: 0 0 auto 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .65rem 3%;
+  background: #fff; border-bottom: 3px solid #e8710a; box-shadow: 0 3px 16px rgba(0, 0, 0, .14); }
+.brand { display: flex; align-items: center; gap: .6rem; color: #d65a00; flex: none; }
+.brand-icon { font-size: 2.1rem; color: #e8710a; flex: none; }
+.brand strong { display: block; font-family: var(--display); font-size: 1rem; line-height: 1.2; color: #d65a00; }
+html[lang='ml'] .brand strong { font-family: 'Noto Serif Malayalam', serif; font-size: 1.05rem; }
+.brand small { display: block; font-size: .88rem; color: #b8570a; line-height: 1.2; }
+
+.nav-links { display: flex; gap: 1.2rem; }
+.nav-links a { color: #d65a00; font-size: 1.02rem; font-weight: 600; padding: .25rem 0; border-bottom: 2px solid transparent; transition: color .25s, border-color .25s; white-space: nowrap; }
+.nav-links a:hover, .nav-links a.active { color: #a63f00; border-color: #e8710a; }
+
+.nav-tools { display: flex; align-items: center; gap: .6rem; }
+.lang { background: transparent; color: #d65a00; border: 1.5px solid #e8710a; border-radius: 30px; padding: .25rem 1rem; font-weight: 700; transition: background .25s, color .25s; }
+.lang:hover { background: #e8710a; color: #fff; }
+.burger { display: none; background: none; border: none; color: #d65a00; font-size: 1.6rem; }
+
+/* welcome devotional modal */
+.welcome { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 1rem; background: rgba(15, 3, 3, .92); animation: fade .6s ease; }
+.welcome-box { max-width: 480px; text-align: center; padding: 2.2rem 1.8rem; border: 2px solid var(--gold); border-radius: 18px; outline: 1px solid var(--line); outline-offset: 6px; background: linear-gradient(160deg, var(--maroon), var(--deep)); }
+.welcome-box h2 { color: var(--gold); margin: .3rem 0; }
+.welcome-box p { margin-bottom: 1rem; color: var(--muted); }
+.welcome-box .mantra { font-size: 1.25rem; }
+.flames { display: flex; justify-content: center; gap: 1rem; font-size: 2rem; color: var(--saffron); }
+.flames svg:nth-child(2) { color: var(--gold); }
+@keyframes fade { from { opacity: 0; } }
+
+/* the menu turns into a drop-down below this width */
+@media (max-width: 1180px) {
+  .burger { display: block; }
+  .nav-links { position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; background: #fff; max-height: 0; overflow: hidden; transition: max-height .45s ease; border-bottom: 3px solid #e8710a; box-shadow: 0 12px 20px rgba(0, 0, 0, .12); }
+  .nav-links.open { max-height: 520px; }
+  .nav-links a { padding: .9rem 6%; border-bottom: 1px solid #f6e3cc; font-size: 1.08rem; }
+  .nav-links a.active { background: #fff4e8; border-left: 4px solid #e8710a; }
+}
+@media (max-width: 768px) { .brand strong { font-size: .92rem; } }
+@media (max-width: 420px) { .brand small { display: none; } .brand-icon { font-size: 1.7rem; } .lang { padding: .2rem .75rem; font-size: .9rem; } .welcome-box { padding: 1.6rem 1.2rem; } }
+@media (max-width: 320px) { .brand strong { font-size: .8rem; } .nav { padding: .55rem 3%; } }

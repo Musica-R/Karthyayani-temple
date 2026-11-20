@@ -1,0 +1,20 @@
+/* Message the temple form (prefix cf-) */
+.cf { --txt: #3b1a12; --muted: #6a4636; --title: #8f1218; --acc: #d65a00;
+  padding: 1.9rem 1.8rem; border-radius: 22px 22px 8px 8px; border: 2px solid var(--gold); outline: 1px solid rgba(143, 18, 24, .25); outline-offset: 6px;
+  background: linear-gradient(180deg, #fffdf6, #fdf1d8); color: var(--txt); box-shadow: 0 18px 40px rgba(0, 0, 0, .3); text-align: left; }
+.cf-title { display: flex; align-items: center; gap: .6rem; font-size: 1.45rem; color: var(--title); }
+.cf-title svg { color: #d65a00; flex: none; }
+.cf-sub { color: var(--muted); font-size: 1rem; line-height: 1.5; margin: .3rem 0 1.2rem; }
+.cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
+.cf-field { display: block; margin-bottom: .9rem; }
+.cf-field > span { display: block; font-weight: 700; font-size: .95rem; margin-bottom: .25rem; color: var(--txt); }
+.cf-field input, .cf-field select, .cf-field textarea { width: 100%; padding: .65rem .9rem; border: 1.5px solid rgba(143, 18, 24, .28); border-radius: 10px; background: #fff; color: var(--txt); font: inherit; font-size: 1rem; transition: border-color .25s, box-shadow .25s; }
+.cf-field textarea { resize: vertical; min-height: 110px; }
+.cf-field input:focus, .cf-field select:focus, .cf-field textarea:focus { outline: none; border-color: #e8710a; box-shadow: 0 0 0 3px rgba(232, 113, 10, .18); }
+.cf-field [aria-invalid='true'] { border-color: #c0141a; }
+.cf-field em { display: block; margin-top: .2rem; color: #c0141a; font-size: .9rem; font-style: normal; }
+.cf-actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: .4rem; }
+.cf-actions .btn.ghost { color: #8f1218; border-color: #d65a00; }
+.cf-note { margin-top: .9rem; font-size: .92rem; color: var(--muted); }
+.cf-note.ok { color: #1c7a3a; font-weight: 700; }
+@media (max-width: 560px) { .cf { padding: 1.4rem 1.1rem; } .cf-row { grid-template-columns: 1fr; gap: 0; } .cf-actions .btn { width: 100%; justify-content: center; } }
