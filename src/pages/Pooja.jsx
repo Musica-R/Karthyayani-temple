@@ -6,9 +6,14 @@ import Reveal from '../hooks/Reveal.jsx';
 import { useLang } from '../context/LanguageContext.jsx';
 import { U } from '../data/images.js';
 import '../styles/pooja.css';
+import offering1 from "../assets/offering1.jpg";
+import offering2 from "../assets/offering3.png";
+import offering3 from "../assets/offering2.jpg";
+import offering4 from "../assets/offering4.jpg";
+import pray1 from "../assets/pray1.jpg";
 
 const icons = [GiLotus, GiCandleFlame, FaCookieBite, FaRing];
-const imgs = [U.lampStand, U.lampDark, U.bananaLeaf, U.lampCircle];
+const imgs = [offering1, offering2, offering3, offering4];
 
 export default function Pooja() {
   const { t } = useLang();
@@ -40,7 +45,7 @@ export default function Pooja() {
           })}
         </div>
       </Band>
-      <Section tone="cream" title={x.guideTitle} image={U.bananaLeaf} caption={x.cap2} flip>
+      <Section tone="cream" title={x.guideTitle} image={pray1} caption={x.cap2} flip>
         <ul className="how-list">
           {x.guide.map((s, n) => <Reveal as="li" key={n} i={n + 2}><FaCheckCircle /> {s}</Reveal>)}
         </ul>

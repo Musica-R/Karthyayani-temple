@@ -6,6 +6,8 @@ import { useLang } from '../context/LanguageContext.jsx';
 import { U } from '../data/images.js';
 import { FEST_PHONES } from '../data/common.js';
 import '../styles/festivals.css';
+import fev from "../assets/festival1.jpg";
+import festival from "../assets/festival2.jpg";
 
 export default function Festivals() {
   const { t } = useLang();
@@ -19,8 +21,8 @@ export default function Festivals() {
           <p>{f.bannerPlace}</p>
         </Reveal>
       </Band>
-      <Section tone="light" title={f.aboutTitle} paras={f.about} image={U.lampTable} caption={x.cap1} />
-      <Section tone="dark" title={x.sigTitle} paras={x.sig} image={U.kathakali} caption={x.cap2} flip />
+      <Section tone="light" title={f.aboutTitle} paras={f.about} image={fev} caption={x.cap1} />
+      <Section tone="dark" title={x.sigTitle} paras={x.sig} image={festival} caption={x.cap2} flip />
       <Section tone="light" title={f.cultTitle}>
         <ul className="cult">
           {f.cult.map((c, n) => <Reveal as="li" key={n} i={n}><FaMusic /> {c}</Reveal>)}

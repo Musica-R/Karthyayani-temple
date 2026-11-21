@@ -6,6 +6,8 @@ import Reveal from '../hooks/Reveal.jsx';
 import { useLang } from '../context/LanguageContext.jsx';
 import { hero, U } from '../data/images.js';
 import '../styles/architecture.css';
+import arcbg from "../assets/bg-image1.png";
+import arcimg from "../assets/about3.png";
 
 const icons = [FaDoorOpen, FaUtensils, GiCandleFlame, FaCircle];
 
@@ -14,7 +16,7 @@ export default function Architecture() {
   const a = t.arch; const x = t.x.arch;
   return (
     <>
-      <PageHero title={a.title} sub={a.sub} image={[U.gopuram, hero]} />
+      <PageHero title={a.title} sub={a.sub} image={arcbg} />
       <Section tone="light" title={a.listTitle} paras={[a.intro]} image={hero} caption={x.cap1}>
         <div className="arch-grid">
           {a.items.map(([name, desc], n) => {
@@ -24,7 +26,7 @@ export default function Architecture() {
         </div>
         <Reveal as="p" i={8} className="para">{a.other}</Reveal>
       </Section>
-      <Section tone="dark" title={x.sacredTitle} paras={x.sacred} image={U.gopuram} caption={x.cap2} flip>
+      <Section tone="dark" title={x.sacredTitle} paras={x.sacred} image={arcimg} caption={x.cap2} flip>
         <ul className="tip-list">
           {x.tips.map((tip, n) => <Reveal as="li" key={n} i={n + 3}><FaGem /> {tip}</Reveal>)}
         </ul>

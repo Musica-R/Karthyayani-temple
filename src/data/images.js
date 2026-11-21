@@ -2,6 +2,14 @@
 import hero from '../assets/temple-image.png';
 import banyan from '../assets/k2.jpeg';
 import shrine from '../assets/WhatsApp_Image_2026-11-19_at_11_39_20_AM.jpeg';
+import image1 from "../assets/God.jpg";
+import image2 from "../assets/temple-image.png";
+import image3 from "../assets/detity1.webp";
+import image4 from "../assets/festival1.jpg";
+import image5 from "../assets/deepam.webp";
+import image6 from "../assets/about2.png";
+import image7 from "../assets/contact.jpg";
+import image8 from "../assets/bg-image.png";
 
 // Free-to-use photos from unsplash.com (hotlinked). If one cannot load, the site shows your own photo instead.
 const u = (id, w = 900) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&q=70&w=${w}`;
@@ -22,7 +30,7 @@ export const U = {
 
 export { hero, banyan, shrine };
 // gallery order, matches t.x.gallery.caps
-export const gallery = [hero, banyan, shrine, U.gopuram, U.templeWater, U.statue, U.lampDark, U.lampStand, U.lampCircle, U.lampTable, U.bananaLeaf, U.kathakali, U.river, U.hills];
+export const gallery = [image1, image2, image3, image4, image5, image6, image7, image8,];
 
 // category of each gallery photo (same order as `gallery` above)
 export const galleryCats = ['temple', 'temple', 'temple', 'temple', 'temple', 'temple', 'lamps', 'lamps', 'lamps', 'lamps', 'festival', 'festival', 'nature', 'nature'];

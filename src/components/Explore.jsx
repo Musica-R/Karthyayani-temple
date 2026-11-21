@@ -13,11 +13,12 @@ import festival from '../assets/festival.jpg';
 import pooja from "../assets/pooja.jpg";
 import temple from "../assets/temple.webp";
 import contact from "../assets/contact.jpg";
+import book from "../assets/detity1.webp"
 
 const items = [
   ['/deity', 'deity', GiLotus, god],
   ['/architecture', 'architecture', FaMonument, hero],
-  ['/about', 'about', FaOm, banyan],
+  ['/about', 'about', FaOm, book],
   ['/pooja', 'pooja', FaHandHoldingHeart, pooja],
   ['/festivals', 'festivals', FaCalendarAlt, festival],
   ['/gallery', 'gallery', FaImages, temple],

@@ -1,16 +1,325 @@
-.prayer { text-align: center; padding-top: 3rem; }
-.mantra-big { font-size: 1.9rem; font-weight: 700; color: var(--acc); }
-.prayer-sub { color: var(--muted); font-style: italic; }
-.deity-photo { max-width: 760px; margin: 2rem auto; padding: 10px; border: 2px solid var(--gold); border-radius: 6px; outline: 1px solid var(--cardline); outline-offset: 6px; background: var(--maroon); }
-.deity-photo img { width: 100%; max-height: 460px; object-fit: cover; filter: sepia(.25) contrast(1.05); }
-@media (max-width: 768px) { .mantra-big { font-size: 1.5rem; } }
-@media (max-width: 420px) { .mantra-big { font-size: 1.2rem; } .deity-photo { padding: 6px; outline-offset: 4px; } }
-@media (max-width: 320px) { .mantra-big { font-size: 1.05rem; } }
+/* ================= Deity page ================= */
 
-.prayer-band { text-align: center; padding-top: 1rem; }
-.how-list { max-width: 640px; }
-.how-list li { display: flex; gap: .7rem; align-items: flex-start; padding: .8rem 1rem; margin-bottom: .7rem; border: 1px solid var(--cardline); border-radius: 10px; background: var(--card); color: var(--muted); }
-.how-list svg { color: var(--acc); flex: none; margin-top: .4rem; }
+/* opening prayer */
+.prayer-band {
+  text-align: center;
+  padding-bottom: 5.5rem;
+}
 
-/* layout polish */
-.how-list li { transition: transform .3s; } .how-list li:hover { transform: translateX(6px); }
+.mantra-big {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--acc);
+}
+
+.prayer-sub {
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* the idol at a glance: cards straddle the prayer band */
+.band.dt-facts {
+  overflow: visible;
+  padding-bottom: 1rem;
+}
+
+.dt-facts .container.section {
+  padding-top: 0;
+}
+
+.dt-fact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: -3.6rem;
+  position: relative;
+  z-index: 3;
+}
+
+.dt-fact {
+  text-align: center;
+  padding: 1.3rem .7rem;
+  border: 1px solid var(--cardline);
+  border-bottom: 4px solid var(--saffron);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 14px 30px rgba(80, 30, 10, .2);
+  transition: transform .3s;
+}
+
+.dt-fact-grid .dt-fact:hover {
+  transform: translateY(-5px);
+}
+
+.dt-fact b {
+  display: block;
+  font-family: var(--display);
+  font-size: 1.5rem;
+  color: var(--orange);
+}
+
+html[lang='ml'] .dt-fact b {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: 1.25rem;
+}
+
+.dt-fact span {
+  display: block;
+  color: var(--muted);
+  font-size: .95rem;
+  line-height: 1.4;
+}
+
+/* know the goddess */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.1rem;
+  margin-top: 2.2rem;
+}
+
+.pillar {
+  text-align: center;
+  padding: 1.6rem 1.1rem;
+  border: 1px solid var(--cardline);
+  border-top: 4px solid var(--acc);
+  border-radius: 14px;
+  background: var(--card);
+  box-shadow: 0 10px 24px rgba(80, 30, 10, .1);
+  transition: transform .3s, box-shadow .3s;
+}
+
+.pillars .pillar:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(80, 30, 10, .18);
+}
+
+.pillar-ico {
+  display: inline-grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: .7rem;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--saffron), var(--kumkum));
+  border: 2px solid var(--gold);
+}
+
+.pillar h3 {
+  margin: 0 0 .3rem;
+  font-size: 1.25rem;
+  color: var(--title);
+}
+
+.pillar p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .98rem;
+  line-height: 1.6;
+}
+
+/* priesthood through time */
+.mini-title.centered {
+  text-align: center;
+  margin-top: 2.2rem;
+}
+
+.priest-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.priest-card {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--cardline);
+  border-left: 4px solid var(--acc);
+  border-radius: 10px;
+  background: var(--card);
+  box-shadow: 0 6px 16px rgba(80, 30, 10, .08);
+}
+
+.priest-card b {
+  display: block;
+  margin-bottom: .2rem;
+  color: var(--title);
+  font-size: 1.1rem;
+}
+
+.priest-card span {
+  color: var(--muted);
+  font-size: .95rem;
+  line-height: 1.5;
+  display: block;
+}
+
+/* the prayer and its meaning */
+.meaning-band {
+  text-align: center;
+}
+
+.mantra-card {
+  position: relative;
+  max-width: 720px;
+  margin: 2rem auto 0;
+  padding: 2.2rem 1.6rem 1.8rem;
+  border: 2px solid var(--gold);
+  border-radius: 999px 999px 18px 18px / 120px 120px 18px 18px;
+  outline: 1px solid var(--cardline);
+  outline-offset: 7px;
+  background: var(--card);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, .28);
+}
+
+.mc-lotus {
+  font-size: 2.2rem;
+  color: var(--gold);
+}
+
+.mc-sanskrit {
+  margin: .4rem 0;
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--acc);
+}
+
+.mc-mean {
+  margin: 0;
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* how to pray: numbered steps */
+.how-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 640px;
+}
+
+.how-list li {
+  display: flex;
+  gap: .9rem;
+  align-items: flex-start;
+  padding: .8rem 1rem;
+  margin-bottom: .7rem;
+  border: 1px solid var(--cardline);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--muted);
+}
+
+.how-no {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, var(--saffron), var(--kumkum));
+  border: 1px solid var(--gold);
+}
+
+.how-list .how-no+span {
+  padding-top: .15rem;
+}
+
+.how-list li {
+  transition: transform .3s;
+}
+
+.how-list li:hover {
+  transform: translateX(6px);
+}
+
+/* call to action */
+.dt-cta {
+  text-align: center;
+}
+
+.dt-cta .cta-text {
+  text-align: center;
+  margin-inline: auto;
+}
+
+.dt-cta .cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.6rem;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 1024px) {
+  .dt-fact-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: -3rem;
+  }
+
+  .pillars {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .priest-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .mantra-big {
+    font-size: 1.5rem;
+  }
+
+  .mc-sanskrit {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 520px) {
+
+  .pillars,
+  .priest-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mantra-card {
+    border-radius: 999px 999px 14px 14px / 90px 90px 14px 14px;
+    padding: 1.8rem 1rem 1.4rem;
+    outline-offset: 5px;
+  }
+}
+
+@media (max-width: 420px) {
+  .mantra-big {
+    font-size: 1.2rem;
+  }
+
+  .mc-sanskrit {
+    font-size: 1.2rem;
+  }
+
+  .dt-fact-grid {
+    gap: .6rem;
+  }
+
+  .dt-fact b {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .mantra-big {
+    font-size: 1.05rem;
+  }
+
+  .dt-fact-grid {
+    grid-template-columns: 1fr;
+  }
+}
