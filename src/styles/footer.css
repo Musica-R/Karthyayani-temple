@@ -130,9 +130,13 @@ html[lang='ml'] .ft-cta-text h3 {
   color: var(--gold);
 }
 
-.ft-logo>svg {
-  font-size: 2.6rem;
-  color: var(--saffron);
+/* logo image: fixed height, width follows the picture's own proportions */
+.ft-logo-img {
+  display: block;
+  height: 64px;
+  width: auto;
+  max-width: 84px;
+  object-fit: contain;
   flex: none;
 }
 
@@ -378,6 +382,11 @@ html[lang='ml'] .ft-logo strong {
 
   .ft-credit {
     flex: none;
+  }
+
+   .ft-logo-img {
+    height: 56px;
+    max-width: 74px;
   }
 }
 

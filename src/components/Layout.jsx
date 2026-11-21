@@ -5,6 +5,7 @@ import { GiCandleFlame, GiLotus } from 'react-icons/gi';
 import { useLang } from '../context/LanguageContext.jsx';
 import Footer from './Footer.jsx';
 import FloatingActions from './FloatingActions.jsx';
+import logo from '../assets/logo.png';
 import '../styles/layout.css';
 
 const links = [['/', 'home'], ['/about', 'about'], ['/architecture', 'architecture'], ['/deity', 'deity'],
@@ -104,7 +105,7 @@ export default function Layout() {
       {/* navbar: always white with orange text */}
       <header className="nav">
         <Link to="/" className="brand">
-          <GiLotus className="brand-icon" />
+          <img className="brand-logo" src={logo} alt={t.brand} />
           <span className="brand-text"><strong>{t.brand}</strong><small>{t.brandSub}</small></span>
         </Link>
 

@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import { FaPhoneAlt, FaMapMarkerAlt, FaWhatsapp, FaClock, FaCalendarAlt, FaChevronRight, FaRoute, FaArrowUp } from 'react-icons/fa';
-import { GiLotus, GiCandleFlame } from 'react-icons/gi';
+import { GiCandleFlame } from 'react-icons/gi';
 import { useLang } from '../context/LanguageContext.jsx';
 import { PHONE, WHATSAPP, FEST_PHONES, MAP_LINK } from '../data/common.js';
+import logo from '../assets/logo.png';
 import '../styles/footer.css';
 
 const links = [['/', 'home'], ['/about', 'about'], ['/architecture', 'architecture'], ['/deity', 'deity'],
@@ -33,7 +34,7 @@ export default function Footer() {
           {/* brand */}
           <div className="ft-col ft-brand">
             <div className="ft-logo">
-              <GiLotus />
+              <img className="ft-logo-img" src={logo} alt={t.brand} />
               <div><strong>{t.brand}</strong><small>{t.brandSub}</small></div>
             </div>
             <p className="ft-mantra">{t.mantra}</p>
