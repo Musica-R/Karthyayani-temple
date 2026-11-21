@@ -50,7 +50,7 @@ const base = {
       'According to local elders, the temple was once a very beautiful structure, with a Thidappalli (temple kitchen) and a surrounding compound wall.',
     ],
     manageTitle: 'Ownership and Management',
-    manage: 'The temple is currently under the ownership of the Parali Tharavad Tharavattukar, and its administration is carried out by the local committee.',
+    manage: 'The temple is traditionally owned by the Parali Tharavath Tharavadu, while its administration and management are entrusted to the Sandeepani Sadhanalaya Trust.',
     facts: [['7th century', 'As per available records'], ['300 m', 'To Kalpathipuzha'], ['1.5 acres', 'Present temple land'], ['Since 1956', 'Regular poojas']],
   },
   arch: {

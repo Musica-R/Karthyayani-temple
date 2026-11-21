@@ -57,6 +57,16 @@ export default {
     ctaTitle: 'Plan Your Visit',
     ctaText: 'The temple is open every morning from 6:30 to 8:30 AM. See the offerings, or find your way to the hill.',
     ctaPooja: 'Pooja & Vazhipadu', ctaContact: 'How to reach',
+    trustTitle: 'About the Trust',
+    trustText: 'Sandeepani Sadhanalaya Charitable & Welfare Trust is dedicated to promoting spiritual values, Vedic traditions, and Sanatana Dharma through various educational and cultural activities.',
+    trustPoints: [
+      'The temple is administered and managed by Sandeepani Sadhanalaya Trust.',
+      'Promotes Vedic education, traditional rituals, and spiritual practices.',
+      'Conducts Vedic Mantra and Bhagavad Gita classes.',
+      'Encourages the preservation of Hindu culture, traditions, and values.',
+      'Supports spiritual learning and the development of future generations.',
+    ],
+    trustImgAlt: 'Sandeepani Sadhanalaya (Gurukula Sampradayam) gathering',
   },
   arch: {
     sacredTitle: 'Built of Stone and Tradition',

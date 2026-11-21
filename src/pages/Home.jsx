@@ -9,7 +9,7 @@ import Explore from '../components/Explore.jsx';
 import ContactForm from '../components/ContactForm.jsx';
 import { useLang } from '../context/LanguageContext.jsx';
 import { hero, U } from '../data/images.js';
-import god from "../assets/God.jpg";
+import god from "../assets/original-god.webp";
 import temple from "../assets/god3.jpg";
 import offering1 from "../assets/offering1.jpg";
 import offering2 from "../assets/offering3.png";
@@ -97,7 +97,7 @@ export default function Home() {
       </section>
 
       {/* LIGHT: welcome + key facts */}
-      <Section tone="light" className="hm-welcome" title={h.welcomeTitle} paras={[h.welcomeText]} image={god} caption={t.x.about.photoCap}>
+      <Section tone="light" className="hm-welcome" title={h.welcomeTitle} paras={[h.welcomeText]} image={god} >
         <div className="points">
           {x.points.map(([big, small], n) => (
             <Reveal key={n} i={n + 3} className="point"><b>{big}</b><span>{small}</span></Reveal>
@@ -109,7 +109,7 @@ export default function Home() {
       <Explore />
 
       {/* CREAM: why devotees come */}
-      <Section tone="cream" title={x.whyTitle} paras={[x.why]} image={temple} caption={t.x.fest.cap1} flip>
+      <Section tone="cream" title={x.whyTitle} paras={[x.why]} image={temple} flip>
         <Reveal i={3}><Link to="/about" className="btn">{hx.whyBtn} <FaArrowRight /></Link></Reveal>
       </Section>
 
@@ -133,7 +133,7 @@ export default function Home() {
       </Band>
 
       {/* MAROON: festival feature */}
-      <Section tone="maroon" title={x.festTitle} paras={[x.festText]} image={deepam} caption={t.x.fest.cap2}>
+      <Section tone="maroon" title={x.festTitle} paras={[x.festText]} image={deepam} >
         <Reveal i={3}><Link to="/festivals" className="btn">{x.festBtn} <FaArrowRight /></Link></Reveal>
       </Section>
 

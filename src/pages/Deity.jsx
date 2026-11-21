@@ -7,7 +7,7 @@ import Reveal from '../hooks/Reveal.jsx';
 import { useLang } from '../context/LanguageContext.jsx';
 import { banyan, U } from '../data/images.js';
 import '../styles/deity.css';
-import arcbg from "../assets/bg-image2.png";
+import arcbg from "../assets/deepam.png";
 import god1 from "../assets/god1.jpg";
 import pray from "../assets/contact1.jpg";
 import book from "../assets/detity1.webp";
@@ -39,7 +39,7 @@ export default function Deity() {
         </div>
       </Band>
 
-      <Section tone="dark" title={d.prathishtaTitle} paras={d.prathishta} image={book} caption={t.x.about.photoCap} />
+      <Section tone="dark" title={d.prathishtaTitle} paras={d.prathishta} image={book}  />
 
       {/* know the goddess: four short cards */}
       <Band tone="cream">
@@ -58,7 +58,7 @@ export default function Deity() {
         </div>
       </Band>
 
-      <Section tone="maroon" title={x.deviTitle} paras={x.devi} image={god1} caption={x.cap2} flip />
+      <Section tone="maroon" title={x.deviTitle} paras={x.devi} image={god1}  flip />
 
       {/* tradition and priesthood */}
       <Section tone="light" title={d.antiqTitle} paras={d.antiq}>
@@ -81,7 +81,7 @@ export default function Deity() {
       </Band>
 
       {/* how to pray: numbered steps */}
-      <Section tone="maroon" title={x.howTitle} image={pray} caption={x.cap1}>
+      <Section tone="maroon" title={x.howTitle} image={pray}>
         <ol className="how-list">
           {x.how.map((s, n) => <Reveal as="li" key={n} i={n + 2}><span className="how-no">{n + 1}</span><span>{s}</span></Reveal>)}
         </ol>

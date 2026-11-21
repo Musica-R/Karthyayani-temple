@@ -1,21 +1,127 @@
-.arch-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; margin: 1.5rem 0; }
-.arch-item { display: flex; gap: 1rem; align-items: flex-start; padding: 1.4rem; border: 1px solid var(--cardline); border-left: 4px solid var(--saffron); border-radius: 6px 14px 14px 6px; background: var(--card); }
-.arch-item > svg { font-size: 1.8rem; color: var(--acc); flex: none; margin-top: .3rem; }
-.arch-item h3 { color: var(--title); }
-.arch-item p { color: var(--muted); line-height: 1.5; font-size: 1rem; }
-.detail-list { max-width: 720px; margin: 0 auto; }
-.detail-list li { position: relative; padding: .9rem 1rem .9rem 2.4rem; margin-bottom: .7rem; border: 1px solid var(--cardline); border-radius: 10px; background: var(--card); color: var(--muted); }
-.detail-list li::before { content: ''; position: absolute; left: 1rem; top: 1.45rem; width: 10px; height: 10px; background: var(--saffron); transform: rotate(45deg); }
-.source { text-align: center; font-size: .95rem; color: var(--title); font-style: italic; margin-top: 1.2rem; }
-@media (max-width: 768px) { .arch-grid { grid-template-columns: 1fr; } }
-@media (max-width: 420px) { .arch-item { padding: 1rem; } .detail-list li { padding-left: 2.1rem; } }
-@media (max-width: 320px) { .arch-item { flex-direction: column; } }
+.arch-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    margin: 1.5rem 0;
+}
 
-.tip-list { margin-top: 1.2rem; }
-.tip-list li { display: flex; gap: .7rem; align-items: center; padding: .6rem 0; border-bottom: 1px dashed var(--cardline); color: var(--muted); }
-.tip-list svg { color: var(--acc); flex: none; }
+.arch-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.4rem;
+    border: 1px solid var(--cardline);
+    border-left: 4px solid var(--saffron);
+    border-radius: 6px 14px 14px 6px;
+    background: var(--card);
+}
+
+.arch-item>svg {
+    font-size: 1.8rem;
+    color: var(--acc);
+    flex: none;
+    margin-top: .3rem;
+}
+
+.arch-item h3 {
+    color: var(--title);
+}
+
+.arch-item p {
+    color: var(--muted);
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+.detail-list {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.detail-list li {
+    position: relative;
+    padding: .9rem 1rem .9rem 2.4rem;
+    margin-bottom: .7rem;
+    border: 1px solid var(--cardline);
+    border-radius: 10px;
+    background: var(--card);
+    color: var(--muted);
+}
+
+.detail-list li::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 1.45rem;
+    width: 10px;
+    height: 10px;
+    background: var(--saffron);
+    transform: rotate(45deg);
+}
+
+.source {
+    text-align: center;
+    font-size: .95rem;
+    color: var(--title);
+    font-style: italic;
+    margin-top: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .arch-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 420px) {
+    .arch-item {
+        padding: 1rem;
+    }
+
+    .detail-list li {
+        padding-left: 2.1rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .arch-item {
+        flex-direction: column;
+    }
+}
+
+.tip-list {
+    margin-top: 1.2rem;
+}
+
+.tip-list li {
+    display: flex;
+    gap: .7rem;
+    align-items: center;
+    padding: .6rem 0;
+    border-bottom: 1px dashed var(--cardline);
+    color: var(--muted);
+}
+
+.tip-list svg {
+    color: var(--acc);
+    flex: none;
+}
 
 /* layout polish */
-.arch-item { transition: transform .3s, box-shadow .3s; box-shadow: 0 6px 18px rgba(0, 0, 0, .12); }
-.arch-item:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(0, 0, 0, .2); }
-.detail-list li { transition: transform .3s; } .detail-list li:hover { transform: translateX(6px); }
+.arch-item {
+    transition: transform .3s, box-shadow .3s;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .12);
+}
+
+.arch-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, .2);
+}
+
+.detail-list li {
+    transition: transform .3s;
+}
+
+.detail-list li:hover {
+    transform: translateX(6px);
+}

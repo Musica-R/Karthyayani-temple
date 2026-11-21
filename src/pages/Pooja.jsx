@@ -45,7 +45,7 @@ export default function Pooja() {
           })}
         </div>
       </Band>
-      <Section tone="cream" title={x.guideTitle} image={pray1} caption={x.cap2} flip>
+      <Section tone="cream" title={x.guideTitle} image={pray1}  flip>
         <ul className="how-list">
           {x.guide.map((s, n) => <Reveal as="li" key={n} i={n + 2}><FaCheckCircle /> {s}</Reveal>)}
         </ul>

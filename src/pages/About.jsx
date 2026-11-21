@@ -1,13 +1,15 @@
 import { Link } from 'react-router-dom';
-import { FaLeaf, FaUsers, FaLandmark, FaPrayingHands, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaLeaf, FaUsers, FaLandmark, FaPrayingHands, FaMapMarkerAlt, FaCheckCircle } from 'react-icons/fa';
 import PageHero from '../components/PageHero.jsx';
 import Section, { Band, Title } from '../components/Section.jsx';
+import Img from '../components/Img.jsx';
 import Reveal from '../hooks/Reveal.jsx';
 import { useLang } from '../context/LanguageContext.jsx';
 import { banyan, U } from '../data/images.js';
 import '../styles/about.css';
 import abouthero from "../assets/deepam.png";
-import about from "../assets/about2.png"
+import about from "../assets/about2.png";
+import trustImg from "../assets/banner-8.png";
 
 const MEAN_ICONS = [FaLeaf, FaUsers, FaLandmark];
 
@@ -27,7 +29,7 @@ export default function About() {
         </div>
       </Band>
 
-      <Section tone="dark" title={a.historyTitle} paras={a.history} image={about} caption={x.photoCap} />
+      <Section tone="dark" title={a.historyTitle} paras={a.history} image={about}  />
 
       {/* temple at a glance */}
       <Band tone="cream">
@@ -39,7 +41,7 @@ export default function About() {
         </div>
       </Band>
 
-      <Section tone="maroon" title={a.placeTitle} paras={a.place} image={U.river} caption={x.riverCap} flip>
+      <Section tone="maroon" title={a.placeTitle} paras={a.place} image={U.river} flip>
         <Reveal i={5} as="ul" className="chips">
           {x.chips.map((c, n) => <li key={n}><FaMapMarkerAlt aria-hidden="true" /> {c}</li>)}
         </Reveal>
@@ -72,7 +74,28 @@ export default function About() {
       </Band>
 
       <Section tone="dark" title={a.mythTitle} paras={a.myth} />
-      <Section tone="light" title={a.manageTitle} paras={[a.manage]} />
+
+      {/* ownership and management, with the trust details (image left, content right) in the same section */}
+      <Section tone="light" title={a.manageTitle} paras={[a.manage]}>
+        <div className="ts-wrap">
+          <Reveal as="figure" i={3} className="ts-media">
+            <Img src={trustImg} alt={x.trustImgAlt} />
+          </Reveal>
+
+          <div className="ts-text">
+            <Reveal as="h3" i={3} className="ts-heading">{x.trustTitle}</Reveal>
+            <Reveal as="p" i={4} className="ts-intro">{x.trustText}</Reveal>
+            <ul className="ts-list">
+              {x.trustPoints.map((p, n) => (
+                <Reveal key={n} as="li" i={n + 5} className="ts-item">
+                  <FaCheckCircle aria-hidden="true" />
+                  <span>{p}</span>
+                </Reveal>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Section>
 
       {/* call to action */}
       <Band tone="maroon" className="ab-cta">

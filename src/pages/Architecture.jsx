@@ -17,7 +17,7 @@ export default function Architecture() {
   return (
     <>
       <PageHero title={a.title} sub={a.sub} image={arcbg} />
-      <Section tone="light" title={a.listTitle} paras={[a.intro]} image={hero} caption={x.cap1}>
+      <Section tone="light" title={a.listTitle} paras={[a.intro]} image={hero} >
         <div className="arch-grid">
           {a.items.map(([name, desc], n) => {
             const Icon = icons[n] || FaMonument;
@@ -26,7 +26,7 @@ export default function Architecture() {
         </div>
         <Reveal as="p" i={8} className="para">{a.other}</Reveal>
       </Section>
-      <Section tone="dark" title={x.sacredTitle} paras={x.sacred} image={arcimg} caption={x.cap2} flip>
+      <Section tone="dark" title={x.sacredTitle} paras={x.sacred} image={arcimg}  flip>
         <ul className="tip-list">
           {x.tips.map((tip, n) => <Reveal as="li" key={n} i={n + 3}><FaGem /> {tip}</Reveal>)}
         </ul>

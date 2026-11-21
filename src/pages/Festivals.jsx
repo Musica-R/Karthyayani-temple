@@ -21,8 +21,8 @@ export default function Festivals() {
           <p>{f.bannerPlace}</p>
         </Reveal>
       </Band>
-      <Section tone="light" title={f.aboutTitle} paras={f.about} image={fev} caption={x.cap1} />
-      <Section tone="dark" title={x.sigTitle} paras={x.sig} image={festival} caption={x.cap2} flip />
+      <Section tone="light" title={f.aboutTitle} paras={f.about} image={fev}  />
+      <Section tone="dark" title={x.sigTitle} paras={x.sig} image={festival} flip />
       <Section tone="light" title={f.cultTitle}>
         <ul className="cult">
           {f.cult.map((c, n) => <Reveal as="li" key={n} i={n}><FaMusic /> {c}</Reveal>)}
