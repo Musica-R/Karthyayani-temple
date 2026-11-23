@@ -7,7 +7,7 @@ import logo from '../assets/logo.png';
 import '../styles/footer.css';
 
 const links = [['/', 'home'], ['/about', 'about'], ['/architecture', 'architecture'], ['/deity', 'deity'],
-  ['/pooja', 'pooja'], ['/festivals', 'festivals'], ['/gallery', 'gallery'], ['/contact', 'contact']];
+['/pooja', 'pooja'], ['/festivals', 'festivals'], ['/gallery', 'gallery'], ['/contact', 'contact']];
 
 export default function Footer() {
   const { t } = useLang();
@@ -82,7 +82,18 @@ export default function Footer() {
 
         <div className="ft-bottom">
           <p>{t.footer.rights} · {f.templeName}</p>
-          <p className="ft-credit">{t.x.credit}</p>
+          <a
+            className="ft-credit"
+            href="https://mpeoples.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => {
+              e.preventDefault();
+              window.open("https://mpeoples.in/", "_blank", "noopener,noreferrer");
+            }}
+          >
+            {t.x.credit}
+          </a>
           <button className="ft-top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}><FaArrowUp /> {f.top}</button>
         </div>
       </div>

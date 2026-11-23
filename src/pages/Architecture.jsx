@@ -7,7 +7,8 @@ import { useLang } from '../context/LanguageContext.jsx';
 import { hero, U } from '../data/images.js';
 import '../styles/architecture.css';
 import arcbg from "../assets/bg-image1.png";
-import arcimg from "../assets/about3.png";
+import arcimg from "../assets/gallery8.webp";
+import arch from "../assets/gallery4.webp"
 
 const icons = [FaDoorOpen, FaUtensils, GiCandleFlame, FaCircle];
 
@@ -17,7 +18,8 @@ export default function Architecture() {
   return (
     <>
       <PageHero title={a.title} sub={a.sub} image={arcbg} />
-      <Section tone="light" title={a.listTitle} paras={[a.intro]} image={hero} >
+
+      <Section tone="light" title={a.listTitle} paras={[a.intro]} image={arch} >
         <div className="arch-grid">
           {a.items.map(([name, desc], n) => {
             const Icon = icons[n] || FaMonument;

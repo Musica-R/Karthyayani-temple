@@ -27,16 +27,28 @@
   padding-top: 0;
 }
 
+/* flex (not a fixed 4-column grid) so any number of cards stays centred,
+   and every card keeps the same width and height */
 .dt-fact-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  --dt-gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: var(--dt-gap);
+  width: 100%;
   margin-top: -3.6rem;
   position: relative;
   z-index: 3;
 }
 
 .dt-fact {
+  flex: 0 1 calc((100% - 3 * var(--dt-gap)) / 4);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 1.3rem .7rem;
   border: 1px solid var(--cardline);
@@ -259,8 +271,12 @@ html[lang='ml'] .dt-fact b {
 /* ---------- responsive ---------- */
 @media (max-width: 1024px) {
   .dt-fact-grid {
-    grid-template-columns: repeat(2, 1fr);
     margin-top: -3rem;
+  }
+
+  /* two per row; an odd last card stays centred */
+  .dt-fact {
+    flex-basis: calc((100% - var(--dt-gap)) / 2);
   }
 
   .pillars {
@@ -306,7 +322,7 @@ html[lang='ml'] .dt-fact b {
   }
 
   .dt-fact-grid {
-    gap: .6rem;
+    --dt-gap: .6rem;
   }
 
   .dt-fact b {
@@ -319,7 +335,7 @@ html[lang='ml'] .dt-fact b {
     font-size: 1.05rem;
   }
 
-  .dt-fact-grid {
-    grid-template-columns: 1fr;
+  .dt-fact {
+    flex-basis: 100%;
   }
 }

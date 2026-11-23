@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
-import { FaLeaf, FaUsers, FaLandmark, FaPrayingHands, FaMapMarkerAlt, FaCheckCircle } from 'react-icons/fa';
+import { FaLeaf, FaUsers, FaLandmark, FaPrayingHands, FaMapMarkerAlt, FaCheckCircle, FaExternalLinkAlt } from 'react-icons/fa';
 import PageHero from '../components/PageHero.jsx';
 import Section, { Band, Title } from '../components/Section.jsx';
 import Img from '../components/Img.jsx';
 import Reveal from '../hooks/Reveal.jsx';
 import { useLang } from '../context/LanguageContext.jsx';
 import { banyan, U } from '../data/images.js';
+import { TRUST_URL } from '../data/common.js';
 import '../styles/about.css';
 import abouthero from "../assets/deepam.png";
 import about from "../assets/about2.png";
@@ -93,6 +94,13 @@ export default function About() {
                 </Reveal>
               ))}
             </ul>
+            <br />
+            {/* link to the trust's official website */}
+            <Reveal i={10} className="ts-link-wrap">
+              <a className="btn ts-link" href={TRUST_URL} target="_blank" rel="noopener noreferrer">
+                <FaExternalLinkAlt aria-hidden="true" /> {x.trustLink}
+              </a>
+            </Reveal>
           </div>
         </div>
       </Section>

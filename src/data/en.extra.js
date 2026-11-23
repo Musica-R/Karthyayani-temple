@@ -67,6 +67,7 @@ export default {
       'Supports spiritual learning and the development of future generations.',
     ],
     trustImgAlt: 'Sandeepani Sadhanalaya (Gurukula Sampradayam) gathering',
+    trustLink: 'Visit Sandeepani Sadhanalaya website',
   },
   arch: {
     sacredTitle: 'Built of Stone and Tradition',
@@ -94,7 +95,7 @@ export default {
     ],
     cap1: 'A lamp glowing in the dark (representative photo)',
     cap2: 'A goddess statue by the water (representative photo)',
-    facts: [['3½ ft', 'Height of the stone idol'], ['Vishnu', 'Divine presence in the idol'], ['None', 'Subsidiary deities in the temple'], ['Since 1956', 'Regular poojas']],
+    facts: [['3½ ft', 'Height of the stone idol'], ['Vishnu', 'Divine presence in the idol'], ['Since 1956', 'Regular poojas']],
     pillarsTitle: 'Know the Goddess',
     pillars: [
       ['Stone idol', 'Bhagavathy is worshipped as a stone idol, about three and a half feet tall.'],
@@ -210,5 +211,8 @@ export default {
   cx: {
     wa: 'WhatsApp', waText: 'Send a message on WhatsApp', callText: 'Speak to the temple directly',
     sideTitle: 'Temple Details',
+    trustTitle: 'Managed by Sandeepani Sadhanalaya Trust',
+    trustText: 'The temple is administered by Sandeepani Sadhanalaya Charitable & Welfare Trust. Learn more about their Vedic classes and activities on their website.',
+    trustBtn: 'Visit trust website',
   },
 };

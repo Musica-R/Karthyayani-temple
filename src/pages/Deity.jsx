@@ -8,7 +8,7 @@ import { useLang } from '../context/LanguageContext.jsx';
 import { banyan, U } from '../data/images.js';
 import '../styles/deity.css';
 import arcbg from "../assets/deepam.png";
-import god1 from "../assets/god1.jpg";
+import god1 from "../assets/gallery6.webp";
 import pray from "../assets/contact1.jpg";
 import book from "../assets/detity1.webp";
 

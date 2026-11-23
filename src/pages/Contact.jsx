@@ -1,11 +1,11 @@
-import { FaPhoneAlt, FaWhatsapp, FaCarSide, FaTrain, FaPlane, FaMapMarkerAlt, FaRoute, FaClock, FaQuestionCircle } from 'react-icons/fa';
+import { FaPhoneAlt, FaWhatsapp, FaCarSide, FaTrain, FaPlane, FaMapMarkerAlt, FaRoute, FaClock, FaQuestionCircle, FaGlobe, FaExternalLinkAlt } from 'react-icons/fa';
 import PageHero from '../components/PageHero.jsx';
 import Section, { Band, Title } from '../components/Section.jsx';
 import ContactForm from '../components/ContactForm.jsx';
 import Reveal from '../hooks/Reveal.jsx';
 import { useLang } from '../context/LanguageContext.jsx';
 import { U, hero } from '../data/images.js';
-import { PHONE, WHATSAPP, FEST_PHONES, MAP_EMBED, MAP_LINK } from '../data/common.js';
+import { PHONE, WHATSAPP, FEST_PHONES, MAP_EMBED, MAP_LINK, TRUST_URL } from '../data/common.js';
 import '../styles/contact.css';
 
 const icons = [FaCarSide, FaTrain, FaPlane, FaPhoneAlt];
@@ -52,6 +52,10 @@ export default function Contact() {
               <li><FaMapMarkerAlt /><span>{t.footer.line}</span></li>
               <li><FaClock /><span>{h.timingTitle}: {h.timing}</span></li>
               <li><FaPhoneAlt /><a href={`tel:${PHONE}`}>{PHONE}</a></li>
+              <li>
+                <FaGlobe />
+                <a href={TRUST_URL} target="_blank" rel="noopener noreferrer">sandeepanisadhanalaya.com</a>
+              </li>
             </ul>
           </Reveal>
           <Reveal i={2}><ContactForm /></Reveal>
@@ -90,6 +94,17 @@ export default function Contact() {
           ))}
         </div>
       </Section>
+
+      {/* managed by the trust, with link to their website */}
+      <Band tone="cream" className="ct-trust">
+        <Reveal className="ct-trust-box">
+          <h3>{cx.trustTitle}</h3>
+          <p className="para">{cx.trustText}</p>
+          <a className="btn" href={TRUST_URL} target="_blank" rel="noopener noreferrer">
+            <FaExternalLinkAlt aria-hidden="true" /> {cx.trustBtn}
+          </a>
+        </Reveal>
+      </Band>
 
       <Section tone="maroon" title={c.festPhones}>
         <div className="phones">
